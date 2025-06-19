@@ -15,6 +15,8 @@ Operational efficiency
 All using SQL-based querying and data cleaning techniques
 # Data Source
 
+https://github.com/Krishkhattar03/Blinkit-Analysis/blob/main/BlinkIT%20Grocery%20Data.csv
+
 # Data Cleaning Performed
 Standardization was applied to ensure consistency in categorical columns like Item_Fat_Content.
 UPDATE blinkit 
