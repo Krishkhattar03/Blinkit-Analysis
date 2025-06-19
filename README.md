@@ -13,6 +13,7 @@ Outlet-wise distribution
 Operational efficiency
 
 All using SQL-based querying and data cleaning techniques
+# Data Source
 
 # Data Cleaning Performed
 Standardization was applied to ensure consistency in categorical columns like Item_Fat_Content.
@@ -26,33 +27,50 @@ SET item_fat_content =
 # KPIs & Queries Included
 
 A. Total Sales
+
+
 SELECT CAST(SUM(Total_Sales) / 1000000.0 AS DECIMAL(10,2)) AS Total_Sales_Million FROM blinkit;
 
 B. Average Sales
+
+
 SELECT CAST(AVG(Total_Sales) AS INT) AS Avg_Sales FROM blinkit;
 
 C. Number of Items
+
+
 SELECT COUNT(*) AS No_of_Orders FROM blinkit;
 
 D. Average Rating
+
+
 SELECT CAST(AVG(Rating) AS DECIMAL(10,1)) AS Avg_Rating FROM blinkit;
 
 E. Total Sales by Fat Content
+
+
 Grouped and compared Low Fat vs Regular:
 SELECT Item_Fat_Content, SUM(Total_Sales) FROM blinkit GROUP BY Item_Fat_Content;
 
 F. Total Sales by Item Type
+
+
 SELECT Item_Type, SUM(Total_Sales) FROM blinkit GROUP BY Item_Type ORDER BY Total_Sales DESC;
 
 G. Sales by Outlet Establishment Year
+
+
 SELECT Outlet_Establishment_Year, SUM(Total_Sales) FROM blinkit GROUP BY Outlet_Establishment_Year;
 
 H. Sales Percentage by Outlet Size
+
+
 SELECT outlet_size, 
        SUM(total_sales) AS total_sales, 
        (SUM(total_sales) * 100.0 / SUM(SUM(total_sales)) OVER ()) AS sales_percentage 
 FROM blinkit 
 GROUP BY outlet_size;
+
 
 # Key Insights
 | Area of Insight        | Key Finding                                                        |
