@@ -1,4 +1,4 @@
-# Blinkit-Analysis
+# Blinkit-Delivery-Analysis
 This project presents an in-depth SQL analysis of Blinkit, an Indian online grocery delivery platform. The goal is to derive actionable insights from sales data using PostgreSQL (pgAdmin) 
 
 # Project Objective
